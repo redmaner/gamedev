@@ -1,5 +1,12 @@
 extends Node
 
+const FRAME_IMAGES: Array[CompressedTexture2D] = [
+	preload("res://assets/frames/blue_frame.png"),
+	preload("res://assets/frames/red_frame.png"),
+	preload("res://assets/frames/green_frame.png"),
+	preload("res://assets/frames/yellow_frame.png"),
+]
+
 var _item_images: Array[ImageInfo] = []
 
 # Called when the node enters the scene tree for the first time.
@@ -29,3 +36,12 @@ func add_file_to_list(name: String, path: String) -> void:
 
 func get_random_image() -> ImageInfo:
 	return _item_images.pick_random()
+	
+func get_image_by_index(index: int) -> ImageInfo:
+	return _item_images[index]
+	
+func shuffle_images() -> void:
+	_item_images.shuffle()
+ 
+func get_random_frame_image() -> CompressedTexture2D:
+	return FRAME_IMAGES.pick_random()

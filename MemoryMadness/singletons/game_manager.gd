@@ -9,4 +9,8 @@ const LEVELS: Dictionary = {
 	6: { "rows": 6, "cols": 6 }
 }
 
+func get_level_selection(level_num: int) -> LevelData:
+	var data = LEVELS[level_num]
+	return LevelData.new(data.rows, data.cols)
+
 
