@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=3 uid="uid://tek410esy0g2"]
+
+[ext_resource type="Script" path="res://scenes/game_screen.gd" id="1_1sfdh"]
+[ext_resource type="LabelSettings" uid="uid://br01mxpue5h37" path="res://assets/fonts/label.tres" id="1_27oc4"]
+[ext_resource type="Texture2D" uid="uid://bclbwcljalu25" path="res://assets/ui/blue_button00.png" id="2_tst1o"]
+[ext_resource type="Texture2D" uid="uid://0k40s3fi57mk" path="res://assets/ui/yellow_button00.png" id="3_1nc8u"]
+[ext_resource type="Texture2D" uid="uid://cfts7ju2gdwre" path="res://assets/ui/green_button00.png" id="4_rmqhk"]
+[ext_resource type="FontFile" uid="uid://m5veyng2k0m7" path="res://assets/fonts/gemunu-libre-v8-latin-700.ttf" id="5_0l3l6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aq2ql"]
+font = ExtResource("5_0l3l6")
+font_size = 32
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="GameScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1sfdh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TileContainer" type="GridContainer" parent="HBoxContainer/MC"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MC2" type="MarginContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/margin_right = 24
+
+[node name="VB" type="VBoxContainer" parent="HBoxContainer/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+
+[node name="HB" type="HBoxContainer" parent="HBoxContainer/MC2/VB"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MC2/VB/HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Moves"
+label_settings = ExtResource("1_27oc4")
+vertical_alignment = 1
+
+[node name="MovesLabel" type="Label" parent="HBoxContainer/MC2/VB/HB"]
+layout_mode = 2
+text = "000"
+label_settings = ExtResource("1_27oc4")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HB2" type="HBoxContainer" parent="HBoxContainer/MC2/VB"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MC2/VB/HB2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pairs"
+label_settings = ExtResource("1_27oc4")
+vertical_alignment = 1
+
+[node name="PairsLabel" type="Label" parent="HBoxContainer/MC2/VB/HB2"]
+layout_mode = 2
+text = "000"
+label_settings = ExtResource("1_27oc4")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="HBoxContainer/MC2/VB"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ExitButton" type="TextureButton" parent="HBoxContainer/MC2/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_tst1o")
+texture_pressed = ExtResource("3_1nc8u")
+texture_hover = ExtResource("4_rmqhk")
+
+[node name="Label" type="Label" parent="HBoxContainer/MC2/VB/ExitButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+label_settings = SubResource("LabelSettings_aq2ql")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="HBoxContainer/MC2/VB/ExitButton" to="." method="_on_exit_button_pressed"]

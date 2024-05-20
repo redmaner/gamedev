@@ -1,0 +1,9 @@
+res://scenes/master_scene.tscn
+res://singletons/signal_manager.gd
+res://scenes/master_scene.gd
+res://scenes/game_screen.gd
+res://scenes/game_screen.tscn
+res://scenes/level_button.tscn
+res://scenes/level_button.gd
+res://scenes/main_screen.tscn
+res://scenes/front_sprite.tscn
