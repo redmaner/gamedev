@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvb1gpv0vmypw"]
 
 [ext_resource type="Texture2D" uid="uid://03kiv3e8kp81" path="res://assets/glitch/cabbage.png" id="1_boc5x"]
-[ext_resource type="Script" path="res://scenes/front_sprite.gd" id="2_kl5v1"]
+[ext_resource type="Script" path="res://components/front_sprite.gd" id="2_kl5v1"]
 
 [node name="FrontSprite" type="TextureRect"]
 anchors_preset = 8

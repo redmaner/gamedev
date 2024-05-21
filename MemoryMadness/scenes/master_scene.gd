@@ -11,12 +11,13 @@ func _ready():
 	SignalManager.on_game_exit_pressed.connect(on_game_exit_pressed)
 	SignalManager.on_level_selection.connect(on_level_selection)
 	
-func show_game(show: bool) -> void:
-	game_screen.visible = show 
-	main_screen.visible = !show
+func show_game(should_show: bool) -> void:
+	game_screen.visible = should_show 
+	main_screen.visible = !should_show
 
 func on_game_exit_pressed() -> void:
 	show_game(false)
+	GameManager.clear_nodes_of_group(GameManager.GROUP_TILE)
 	SoundManager.play_sound(sound, SoundManager.SOUND_MAIN_MENU)
 
 func on_level_selection(level_number: int) -> void:

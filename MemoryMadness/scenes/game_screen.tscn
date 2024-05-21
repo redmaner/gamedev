@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://tek410esy0g2"]
+[gd_scene load_steps=10 format=3 uid="uid://tek410esy0g2"]
 
 [ext_resource type="Script" path="res://scenes/game_screen.gd" id="1_1sfdh"]
 [ext_resource type="LabelSettings" uid="uid://br01mxpue5h37" path="res://assets/fonts/label.tres" id="1_27oc4"]
+[ext_resource type="PackedScene" uid="uid://y5n18387ytew" path="res://components/memory_tile.tscn" id="2_olifc"]
 [ext_resource type="Texture2D" uid="uid://bclbwcljalu25" path="res://assets/ui/blue_button00.png" id="2_tst1o"]
 [ext_resource type="Texture2D" uid="uid://0k40s3fi57mk" path="res://assets/ui/yellow_button00.png" id="3_1nc8u"]
 [ext_resource type="Texture2D" uid="uid://cfts7ju2gdwre" path="res://assets/ui/green_button00.png" id="4_rmqhk"]
 [ext_resource type="FontFile" uid="uid://m5veyng2k0m7" path="res://assets/fonts/gemunu-libre-v8-latin-700.ttf" id="5_0l3l6"]
+[ext_resource type="PackedScene" uid="uid://dej2fh776h1ip" path="res://lib/scorer.tscn" id="8_vxcl8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_aq2ql"]
 font = ExtResource("5_0l3l6")
@@ -21,6 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1sfdh")
+memory_tile_scene = ExtResource("2_olifc")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -108,5 +111,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Sound" type="AudioStreamPlayer" parent="."]
+
+[node name="Scorer" parent="." instance=ExtResource("8_vxcl8")]
 
 [connection signal="pressed" from="HBoxContainer/MC2/VB/ExitButton" to="." method="_on_exit_button_pressed"]

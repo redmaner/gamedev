@@ -2,8 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://bnao72pjyw0g0" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_307i1"]
 [ext_resource type="Script" path="res://scenes/main_screen.gd" id="1_qn1mb"]
-[ext_resource type="PackedScene" uid="uid://crf44504rngx8" path="res://scenes/level_button.tscn" id="2_flcxe"]
-[ext_resource type="PackedScene" uid="uid://bvb1gpv0vmypw" path="res://scenes/front_sprite.tscn" id="2_r7vol"]
+[ext_resource type="PackedScene" uid="uid://crf44504rngx8" path="res://components/level_button.tscn" id="2_flcxe"]
+[ext_resource type="PackedScene" uid="uid://bvb1gpv0vmypw" path="res://components/front_sprite.tscn" id="2_r7vol"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_aqhv6"]
 font = ExtResource("1_307i1")

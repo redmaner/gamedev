@@ -11,7 +11,7 @@ func _ready():
 	run()
 	
 func set_random_image_texture() -> void:
-	texture = ImageManager.get_random_image().get_texture()
+	texture = ImageManager.get_random_image().texture
 
 func get_random(vec: Vector2) -> float:
 	return randf_range(vec.x, vec.y)

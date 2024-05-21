@@ -1,11 +1,13 @@
+Timer
 AudioStreamPlayer
+Node
+TextureRect
+TextureButton
 Control
 Label
-TextureButton
 HBoxContainer
 VBoxContainer
 MarginContainer
 GridContainer
-TextureRect
 ColorRect
 CanvasLayer

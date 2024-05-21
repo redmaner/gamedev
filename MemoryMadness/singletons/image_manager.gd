@@ -29,9 +29,9 @@ func load_item_images() -> void:
 	print("loaded ", _item_images.size())
 	
 
-func add_file_to_list(name: String, path: String) -> void:
-	var full_path: String = path + "/" + name 
-	var info: ImageInfo = ImageInfo.new(name, full_path)
+func add_file_to_list(file_name: String, path: String) -> void:
+	var full_path: String = path + "/" + file_name 
+	var info: ImageInfo = ImageInfo.new(file_name, full_path)
 	_item_images.append(info)
 
 func get_random_image() -> ImageInfo:
