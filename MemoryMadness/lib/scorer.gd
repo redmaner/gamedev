@@ -1,5 +1,7 @@
 extends Node
 
+class_name Scorer
+
 @onready var sound = $Sound
 @onready var reveal_timer = $RevealTimer
 
@@ -54,7 +56,18 @@ func _on_reveal_timer_timeout():
 		tile.reveal(false)
 		
 	_selections.clear()
+	check_game_over()
 	SignalManager.on_selection_enabled.emit()
+	
+func check_game_over() -> void:
+	if _pairs_made == _target_pairs:
+		SignalManager.on_game_over.emit(_moves_made)
 	
 func on_game_exit_pressed() -> void:
 	reveal_timer.stop()
+	
+func get_moves_made() -> String:
+	return str(_moves_made)
+	
+func get_pairs_made() -> String:
+	return "%s / %s" % [_pairs_made, _target_pairs]

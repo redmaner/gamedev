@@ -4,11 +4,18 @@ extends Control
 
 @onready var tile_container = $HBoxContainer/MC/TileContainer
 @onready var sound = $Sound
-@onready var scorer = $Scorer
+@onready var scorer: Scorer = $Scorer
+
+@onready var moves_label = $HBoxContainer/MC2/VB/HB/MovesLabel
+@onready var pairs_label = $HBoxContainer/MC2/VB/HB2/PairsLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SignalManager.on_level_selection.connect(on_level_selection)
+	
+func _process(_delta):
+	moves_label.text = scorer.get_moves_made()
+	pairs_label.text = scorer.get_pairs_made()
 
 func _on_exit_button_pressed():
 	SoundManager.play_sound(sound, SoundManager.SOUND_SELECT_BUTTON)
